@@ -1,0 +1,16 @@
+# docker with nginx
+FROM node:lts-alpine as builder
+
+WORKDIR "/app"
+COPY package.json .
+
+RUN npm install
+COPY . .
+RUN npm run build
+
+FROM nginx:alpine
+
+COPY --from=builder /app/build /usr/share/nginx/html
+
+# docker build -t reactimage:nginx -f Dockerfile-Production .
+# docker run -p 8081:80 reactimage:nginx
