@@ -1,0 +1,29 @@
+.todo-app-container {
+  display: grid;
+  height: 100vh;
+  border: 1px solid black;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "leftsec topsec topsec"
+    "leftsec sec1 sec2";
+}
+
+#div1 {
+  grid-area: leftsec;
+  background-color: gray;
+}
+
+#div2 {
+  grid-area: topsec;
+  background-color: cyan;
+}
+#div3 {
+  grid-area: sec1;
+  background-color: violet;
+}
+
+#div4 {
+  grid-area: sec2;
+  background-color: red;
+}
